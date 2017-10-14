@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
+	<title>insertBefore兼容IE8appendChild</title>
 	<link rel="stylesheet" href="">
 </head>
 <body>
@@ -16,7 +16,7 @@
 <script type="text/javascript">
 	var btn = document.querySelector('#btn');
 	var uls = document.querySelector('#ul');
-	var txt = document.querySelector('#txt');
+	var txt = document.querySelector('#txt');//IE8以下不兼容querySelector();
 	btn.onclick = function(){
 		var li = document.createElement('li');
 		var aLi = uls.getElementsByTagName('li');
