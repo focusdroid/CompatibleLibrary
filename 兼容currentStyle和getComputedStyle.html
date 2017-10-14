@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css">
+		#box {
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>
+<script type="text/javascript">
+	var oBox = document.querySelector('#box');
+	// var oBox = document.getElementById('box');
+	//外部的引入的css样式使用js改变时浏览器兼容
+	if(oBox.currentStyle){
+		//兼容IE
+		alert(oBox.currentStyle.width);
+	}else {
+		//兼容火狐、chrome(必须有false否则不能兼容firefox低版本)
+		alert(getComputedStyle(oBox, false).width);
+	}
+
+
+	//拷贝下面的放在你的comment.js里边
+	function getStyle(obj, attr){
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		}else {
+			return getComputedStyle(obj, false)[attr];
+		}
+	}
+</script>
